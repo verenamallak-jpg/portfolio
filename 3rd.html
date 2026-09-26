@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Verena Mallak Fayez</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#100006;--bg2:#20000F;--plum:#320016;--burg:#4A1025;
+  --wine:#651B38;--rich:#7D2145;--rasp:#9A3158;--pink:#B94D73;
+  --rose:#D27A98;--blush:#E3A1B5;--cream:#F7F1F3;--white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;line-height:1.6}
+::selection{background:var(--pink);color:#fff}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--wine);border-radius:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:24px 64px;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease;background:transparent}
+nav.scrolled{background:rgba(16,0,6,.96);backdrop-filter:blur(24px);padding:16px 64px;border-bottom:1px solid rgba(101,27,56,.35);box-shadow:0 4px 48px rgba(0,0,0,.5)}
+.logo{display:flex;flex-direction:column;text-decoration:none;gap:3px}
+.logo-name{font-size:13px;font-weight:800;letter-spacing:.18em;color:#fff;text-transform:uppercase}
+.logo-sub{font-size:7.5px;font-weight:400;letter-spacing:.32em;color:var(--rose);text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,241,243,.65);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--pink);transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--wine),var(--rich))!important;color:#fff!important;padding:12px 24px!important;border-radius:2px!important;letter-spacing:.18em!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:linear-gradient(135deg,var(--pink),var(--rasp))!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.burger span{display:block;width:24px;height:1.5px;background:var(--cream);transition:all .3s}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(16,0,6,.98);backdrop-filter:blur(20px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:28px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);text-decoration:none;transition:color .3s}
+.mob-menu a:hover{color:var(--pink)}
+.mob-close{position:absolute;top:28px;right:50px;background:none;border:none;color:var(--cream);font-size:32px;cursor:pointer;line-height:1}
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:0 64px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 75% 50%,rgba(101,27,56,.38) 0%,transparent 65%),radial-gradient(ellipse 45% 75% at 92% 18%,rgba(185,77,115,.14) 0%,transparent 55%),radial-gradient(ellipse 55% 45% at 8% 85%,rgba(50,0,22,.65) 0%,transparent 60%),linear-gradient(155deg,var(--bg) 0%,var(--bg2) 45%,var(--plum) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(101,27,56,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(101,27,56,.06) 1px,transparent 1px);background-size:90px 90px}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding-top:80px}
+.eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:30px}
+.eyebrow-line{width:48px;height:1px;background:linear-gradient(to right,var(--pink),transparent)}
+.eyebrow-text{font-size:9.5px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--pink)}
+.hero-h1{font-size:clamp(52px,8.5vw,112px);font-weight:900;line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:28px}
+.hero-h1 em{font-style:italic;font-weight:200;color:var(--rose)}
+.hero-h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(210,122,152,.45)}
+.hero-sub{font-size:clamp(14px,1.6vw,16.5px);font-weight:300;line-height:1.85;color:rgba(247,241,243,.62);max-width:500px;margin-bottom:52px}
+.hero-btns{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--wine),var(--rich));color:#fff;padding:18px 40px;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1px solid transparent;transition:all .35s;position:relative;overflow:hidden}
+.btn-p::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--pink),var(--rasp));opacity:0;transition:opacity .35s}
+.btn-p:hover::before{opacity:1}
+.btn-p>*{position:relative;z-index:1}
+.btn-s{display:inline-flex;align-items:center;gap:12px;color:rgba(247,241,243,.75);font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(247,241,243,.2);transition:all .3s}
+.btn-s:hover{color:var(--pink);border-color:var(--pink)}
+.btn-s .arr{transition:transform .3s}
+.btn-s:hover .arr{transform:translateX(7px)}
+.hero-side{position:absolute;right:64px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:36px;z-index:2;padding-top:80px}
+.h-stat{text-align:right}
+.h-stat-n{font-size:40px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em}
+.h-stat-n sup{font-size:18px;color:var(--pink);font-weight:700}
+.h-stat-l{font-size:7.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(247,241,243,.45);margin-top:4px}
+.hero-scroll{position:absolute;bottom:40px;left:64px;display:flex;align-items:center;gap:16px;z-index:2}
+.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--pink));animation:scrollPulse 2.2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.35}50%{opacity:1}}
+.scroll-txt{font-size:7.5px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:rgba(247,241,243,.38);writing-mode:vertical-rl}
+.cred-strip{background:var(--plum);border-top:1px solid rgba(101,27,56,.5);border-bottom:1px solid rgba(101,27,56,.5);padding:0 64px}
+.cred-inner{display:flex;align-items:stretch;justify-content:center;max-width:1200px;margin:0 auto}
+.cred-item{display:flex;align-items:center;gap:16px;padding:28px 52px;border-right:1px solid rgba(101,27,56,.45);flex:1;justify-content:center}
+.cred-item:last-child{border-right:none}
+.cred-ico{width:38px;height:38px;background:rgba(185,77,115,.12);border:1px solid rgba(185,77,115,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:14px;flex-shrink:0}
+.cred-val{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.cred-lbl{font-size:7.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,241,243,.48);margin-top:3px}
+section{padding:128px 64px}
+.sec-ey{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-ey-line{width:32px;height:1px;background:linear-gradient(to right,var(--pink),transparent)}
+.sec-ey-txt{font-size:9.5px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--pink)}
+.sec-title{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.03;letter-spacing:-.025em;color:#fff}
+.sec-title em{font-style:italic;font-weight:200;color:var(--rose)}
+.sec-sub{font-size:14.5px;font-weight:300;line-height:1.8;color:rgba(247,241,243,.58);max-width:560px;margin-top:18px}
+.wrap{max-width:1200px;margin:0 auto;width:100%}
+#services{background:var(--bg2);position:relative;overflow:hidden}
+#services::before{content:'';position:absolute;top:-250px;right:-250px;width:700px;height:700px;background:radial-gradient(circle,rgba(101,27,56,.18) 0%,transparent 70%);pointer-events:none}
+.svc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:72px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(101,27,56,.2)}
+.svc-card{background:rgba(16,0,6,.7);padding:48px 38px;position:relative;overflow:hidden;transition:all .4s;border:1px solid transparent}
+.svc-card:nth-child(4){grid-column:1/2}
+.svc-card:nth-child(5){grid-column:2/3}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(185,77,115,.09) 0%,transparent 55%);opacity:0;transition:opacity .4s}
+.svc-card:hover{border-color:rgba(185,77,115,.35);background:rgba(32,0,15,.9);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+.svc-card:hover::before{opacity:1}
+.svc-num{font-size:9px;font-weight:700;letter-spacing:.35em;color:rgba(185,77,115,.6);margin-bottom:30px}
+.svc-ico{width:52px;height:52px;background:rgba(185,77,115,.08);border:1px solid rgba(185,77,115,.22);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:26px;transition:all .35s}
+.svc-card:hover .svc-ico{background:rgba(185,77,115,.18);border-color:rgba(185,77,115,.5)}
+.svc-ico i{font-size:20px;color:var(--pink)}
+.svc-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em;line-height:1.3}
+.svc-tag{font-size:8.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:18px;opacity:.85}
+.svc-desc{font-size:13px;font-weight:300;line-height:1.8;color:rgba(247,241,243,.58)}
+.svc-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px}
+.pill{font-size:7.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(210,122,152,.75);background:rgba(185,77,115,.07);border:1px solid rgba(185,77,115,.18);padding:5px 12px;border-radius:1px}
+#work{background:var(--bg);position:relative}
+.work-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:32px}
+.filters{display:flex;gap:4px;flex-wrap:wrap}
+.fb{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,241,243,.48);background:transparent;border:1px solid rgba(101,27,56,.4);padding:10px 20px;cursor:pointer;transition:all .3s;border-radius:1px;font-family:'Montserrat',sans-serif}
+.fb:hover,.fb.active{color:#fff;background:rgba(185,77,115,.14);border-color:rgba(185,77,115,.55)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.wcard{position:relative;overflow:hidden;cursor:pointer;transition:all .4s;aspect-ratio:4/3}
+.wcard.feat{grid-column:span 2;aspect-ratio:16/9}
+.wcard.hidden{display:none}
+.wcard-bg{position:absolute;inset:0;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.wcard:hover .wcard-bg{transform:scale(1.06)}
+.wcard-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(16,0,6,.96) 0%,rgba(16,0,6,.35) 55%,transparent 100%);transition:all .45s}
+.wcard:hover .wcard-ov{background:linear-gradient(to top,rgba(16,0,6,.98) 0%,rgba(74,16,37,.55) 55%,rgba(185,77,115,.08) 100%)}
+.wcard-cnt{position:absolute;bottom:0;left:0;right:0;padding:34px 30px;transform:translateY(6px);transition:transform .4s}
+.wcard:hover .wcard-cnt{transform:translateY(0)}
+.wcard-cat{font-size:7.5px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.wcard-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.01em;line-height:1.3}
+.wcard.feat .wcard-title{font-size:22px}
+.wcard-meta{display:flex;gap:20px;flex-wrap:wrap}
+.wcard-meta span{font-size:9px;font-weight:400;letter-spacing:.06em;color:rgba(247,241,243,.48)}
+.wcard-meta span strong{color:rgba(247,241,243,.78);font-weight:500}
+.wcard-arr{position:absolute;top:22px;right:22px;width:40px;height:40px;background:rgba(185,77,115,.14);border:1px solid rgba(185,77,115,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:13px;opacity:0;transform:scale(.75) rotate(-45deg);transition:all .35s}
+.wcard:hover .wcard-arr{opacity:1;transform:scale(1) rotate(0deg)}
+.wc1{background:linear-gradient(145deg,#2a0012 0%,#651B38 55%,#4A1025 100%)}
+.wc2{background:linear-gradient(145deg,#18000a 0%,#4A1025 100%)}
+.wc3{background:linear-gradient(145deg,#3d0f1e 0%,#7D2145 100%)}
+.wc4{background:linear-gradient(145deg,#280010 0%,#9A3158 100%)}
+.wc5{background:linear-gradient(145deg,#18000a 0%,#651B38 100%)}
+.wc6{background:linear-gradient(145deg,#3d0f1e 0%,#B94D73 55%,#7D2145 100%)}
+.wshp{position:absolute;border-radius:50%}
+#process{background:var(--bg2);position:relative;overflow:hidden}
+.proc-hdr{margin-bottom:80px}
+.proc-wrap{position:relative;padding-top:20px}
+.proc-connector{position:absolute;top:48px;left:7%;right:7%;height:1px;background:linear-gradient(to right,transparent,var(--wine) 15%,var(--pink) 50%,var(--wine) 85%,transparent);opacity:.3}
+.proc-steps{display:grid;grid-template-columns:repeat(7,1fr);gap:0}
+.pstep{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px}
+.pstep-n{width:58px;height:58px;background:rgba(50,0,22,.8);border:1px solid rgba(101,27,56,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--pink);margin-bottom:24px;position:relative;z-index:1;transition:all .35s;letter-spacing:.08em}
+.pstep:hover .pstep-n{background:rgba(185,77,115,.18);border-color:var(--pink);box-shadow:0 0 24px rgba(185,77,115,.28)}
+.pstep-t{font-size:9.5px;font-weight:700;letter-spacing:.1em;color:#fff;margin-bottom:8px;text-transform:uppercase}
+.pstep-d{font-size:9px;font-weight:300;line-height:1.65;color:rgba(247,241,243,.48)}
+#tools{background:var(--bg)}
+.tools-hdr{margin-bottom:64px}
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(101,27,56,.15)}
+.tcat{background:rgba(16,0,6,.8);padding:36px 28px;transition:all .35s;border:1px solid transparent}
+.tcat:hover{background:rgba(32,0,15,.9);border-color:rgba(185,77,115,.3)}
+.tcat-ico{width:44px;height:44px;background:rgba(185,77,115,.09);border:1px solid rgba(185,77,115,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:18px;margin-bottom:20px;transition:all .35s}
+.tcat:hover .tcat-ico{background:rgba(185,77,115,.18);border-color:rgba(185,77,115,.45)}
+.tcat-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.tlist{display:flex;flex-direction:column;gap:10px}
+.titem{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:300;color:rgba(247,241,243,.62)}
+.tdot{width:4px;height:4px;background:var(--pink);border-radius:50%;flex-shrink:0;opacity:.55}
+#testimonials{background:var(--plum);position:relative;overflow:hidden}
+.test-hdr{margin-bottom:64px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(16,0,6,.3)}
+.tcard{background:rgba(16,0,6,.55);padding:40px 34px;transition:all .35s;border:1px solid transparent;position:relative}
+.tcard:hover{background:rgba(16,0,6,.75);border-color:rgba(185,77,115,.3);transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.35)}
+.tcard.feat{grid-column:span 2}
+.tq{font-size:52px;color:var(--pink);opacity:.35;line-height:.8;margin-bottom:20px;font-family:Georgia,serif;font-weight:900}
+.tstars{display:flex;gap:4px;margin-bottom:20px}
+.tstars i{font-size:11px;color:var(--pink)}
+.ttext{font-size:13.5px;font-weight:300;line-height:1.85;color:rgba(247,241,243,.78);margin-bottom:30px;font-style:italic}
+.tauthor{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid rgba(101,27,56,.35)}
+.tavatar{width:44px;height:44px;background:linear-gradient(135deg,var(--wine),var(--rasp));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0}
+.tname{font-size:12px;font-weight:700;color:#fff;letter-spacing:.06em}
+.trole{font-size:8.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,241,243,.42);margin-top:3px}
+#cta{background:linear-gradient(145deg,var(--bg2) 0%,var(--plum) 45%,var(--burg) 100%);position:relative;overflow:hidden;text-align:center;padding:148px 64px}
+#cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(185,77,115,.1) 0%,transparent 65%);pointer-events:none}
+#cta::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(101,27,56,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(101,27,56,.05) 1px,transparent 1px);background-size:80px 80px}
+.cta-inner{position:relative;z-index:1}
+.cta-ey{display:inline-flex;align-items:center;gap:14px;margin-bottom:28px}
+.cta-ey-line{width:32px;height:1px;background:linear-gradient(to right,var(--pink),transparent)}
+.cta-ey-txt{font-size:9.5px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--pink)}
+.cta-h{font-size:clamp(44px,6.5vw,82px);font-weight:900;line-height:1.03;letter-spacing:-.03em;color:#fff;margin-bottom:24px}
+.cta-h em{font-style:italic;font-weight:200;color:var(--rose)}
+.cta-sub{font-size:15.5px;font-weight:300;line-height:1.8;color:rgba(247,241,243,.58);max-width:520px;margin:0 auto 56px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.btn-o{display:inline-flex;align-items:center;gap:10px;color:rgba(247,241,243,.8);font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:18px 40px;border:1px solid rgba(247,241,243,.22);border-radius:2px;transition:all .35s}
+.btn-o:hover{border-color:var(--pink);color:var(--pink);background:rgba(185,77,115,.08)}
+#contact{background:var(--bg);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(101,27,56,.14) 0%,transparent 70%);pointer-events:none}
+.contact-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:80px;align-items:start}
+.ci-title{font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.03;letter-spacing:-.025em;color:#fff;margin-bottom:22px}
+.ci-title em{font-style:italic;font-weight:200;color:var(--rose)}
+.ci-desc{font-size:14px;font-weight:300;line-height:1.8;color:rgba(247,241,243,.58);margin-bottom:36px}
+.ci-avail{display:inline-flex;align-items:center;gap:10px;background:rgba(185,77,115,.1);border:1px solid rgba(185,77,115,.25);padding:10px 18px;border-radius:2px;margin-bottom:36px}
+.ci-avail-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;box-shadow:0 0 8px rgba(74,222,128,.5);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.ci-avail-txt{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,241,243,.7)}
+.clinks{display:flex;flex-direction:column}
+.clink{display:flex;align-items:center;gap:16px;text-decoration:none;color:rgba(247,241,243,.65);transition:all .3s;padding:20px 0;border-bottom:1px solid rgba(101,27,56,.3)}
+.clink:last-child{border-bottom:none}
+.clink:hover{color:var(--pink);padding-left:6px}
+.clink-ico{width:44px;height:44px;background:rgba(185,77,115,.08);border:1px solid rgba(185,77,115,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:16px;flex-shrink:0;transition:all .35s}
+.clink:hover .clink-ico{background:rgba(185,77,115,.2);border-color:var(--pink)}
+.clink-label{font-size:8px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,241,243,.35);margin-bottom:3px}
+.clink-val{font-size:13px;font-weight:400;color:rgba(247,241,243,.7)}
+.cform{background:rgba(32,0,15,.6);border:1px solid rgba(101,27,56,.35);padding:52px 46px;position:relative}
+.cform::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--wine),var(--pink),var(--wine))}
+.form-title{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.form-sub{font-size:12px;font-weight:300;color:rgba(247,241,243,.45);margin-bottom:36px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fg{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.fg.full{grid-column:span 2}
+.flbl{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,241,243,.45)}
+.finp,.fsel,.ftxt{background:rgba(16,0,6,.7);border:1px solid rgba(101,27,56,.45);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;padding:14px 18px;border-radius:2px;transition:all .3s;outline:none;width:100%}
+.finp:focus,.fsel:focus,.ftxt:focus{border-color:var(--pink);background:rgba(16,0,6,.9);box-shadow:0 0 0 3px rgba(185,77,115,.08)}
+.finp::placeholder,.ftxt::placeholder{color:rgba(247,241,243,.22)}
+.fsel{-webkit-appearance:none;appearance:none;cursor:pointer}
+.fsel option{background:var(--bg2);color:var(--cream)}
+.ftxt{resize:vertical;min-height:120px}
+.fsub{width:100%;background:linear-gradient(135deg,var(--wine),var(--rich));color:#fff;border:none;padding:18px;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .35s;margin-top:6px;position:relative;overflow:hidden}
+.fsub::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--pink),var(--rasp));opacity:0;transition:opacity .35s}
+.fsub:hover::before{opacity:1}
+.fsub span{position:relative;z-index:1}
+.form-note{font-size:9px;font-weight:300;color:rgba(247,241,243,.32);text-align:center;margin-top:16px;letter-spacing:.05em}
+footer{background:var(--bg2);border-top:1px solid rgba(101,27,56,.35);padding:60px 64px 36px}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;flex-wrap:wrap;gap:40px}
+.foot-brand{max-width:280px}
+.foot-name{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:4px}
+.foot-role{font-size:8px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:20px}
+.foot-desc{font-size:12px;font-weight:300;line-height:1.75;color:rgba(247,241,243,.45)}
+.foot-nav{display:flex;gap:64px;flex-wrap:wrap}
+.fng{display:flex;flex-direction:column;gap:13px}
+.fnt{font-size:8.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--pink);margin-bottom:4px}
+.fnl{font-size:12px;font-weight:300;color:rgba(247,241,243,.52);text-decoration:none;transition:color .3s}
+.fnl:hover{color:var(--cream)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:30px;border-top:1px solid rgba(101,27,56,.28);flex-wrap:wrap;gap:14px}
+.foot-copy{font-size:9.5px;font-weight:300;color:rgba(247,241,243,.32);letter-spacing:.06em}
+.foot-slogan{font-size:9px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(185,77,115,.55)}
+.fi{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+.sec-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(101,27,56,.5) 30%,rgba(185,77,115,.3) 50%,rgba(101,27,56,.5) 70%,transparent)}
+@media(max-width:1100px){
+  nav,nav.scrolled{padding:18px 32px}
+  section{padding:80px 32px}
+  #home{padding:0 32px}
+  .hero-side{right:32px}
+  .cred-strip{padding:0 32px}
+  .svc-hdr{grid-template-columns:1fr;gap:22px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-card:nth-child(4),.svc-card:nth-child(5){grid-column:auto}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .wcard.feat{grid-column:span 2}
+  .proc-steps{grid-template-columns:repeat(4,1fr);gap:24px}
+  .proc-connector{display:none}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid{grid-template-columns:1fr 1fr}
+  .tcard.feat{grid-column:span 2}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  footer{padding:44px 32px 28px}
+  .foot-nav{gap:40px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  #home{padding:0 22px}
+  .hero-side{display:none}
+  .hero-scroll{left:22px}
+  section{padding:64px 22px}
+  .cred-strip{padding:0 22px}
+  .cred-inner{flex-direction:column}
+  .cred-item{padding:18px 22px;border-right:none;border-bottom:1px solid rgba(101,27,56,.4);width:100%;justify-content:flex-start}
+  .cred-item:last-child{border-bottom:none}
+  .svc-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .wcard.feat{grid-column:span 1;aspect-ratio:4/3}
+  .work-hdr{flex-direction:column;align-items:flex-start}
+  .proc-steps{grid-template-columns:repeat(2,1fr);gap:20px}
+  .tools-grid{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:1fr}
+  .tcard.feat{grid-column:span 1}
+  .cform{padding:30px 22px}
+  .frow{grid-template-columns:1fr}
+  .fg.full{grid-column:span 1}
+  footer{padding:36px 22px 24px}
+  .foot-top{flex-direction:column}
+  .foot-nav{gap:32px}
+  .foot-bot{flex-direction:column;text-align:center}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns .btn-p,.cta-btns .btn-o{justify-content:center}
+  #cta{padding:80px 22px}
+  .mob-close{right:22px}
+}
+
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="logo">
+    <span class="logo-name">Verena Mallak Fayez</span>
+    </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-cta">Request a Consultation</a></li>
+  </ul>
+  <button class="burger" id="burgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&times;</button>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#work" onclick="closeMob()">Work</a>
+  <a href="#process" onclick="closeMob()">Process</a>
+  <a href="#tools" onclick="closeMob()">Tools</a>
+  <a href="#testimonials" onclick="closeMob()">Testimonials</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="eyebrow fi">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Marketing Manager &amp; Growth Strategist</span>
+    </div>
+    <h1 class="hero-h1 fi d1">
+      Marketing<br>
+      <em>That Moves</em><br>
+      <span class="outline">Business.</span>
+    </h1>
+    <p class="hero-sub fi d2">
+      I translate business objectives into marketing that creates visibility, drives demand, and delivers measurable growth &mdash; across B2B and B2C, digital and physical, strategy and execution.
+    </p>
+    <div class="hero-btns fi d3">
+      <a href="#contact" class="btn-p">
+        <span>Request a Consultation</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="#work" class="btn-s">
+        Explore My Work <span class="arr">&#8594;</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- CREDIBILITY STRIP -->
+<div class="cred-strip">
+  <div class="cred-inner">
+    <div class="cred-item">
+      <div class="cred-ico"><i class="fas fa-chart-line"></i></div>
+      <div>
+        <div class="cred-val">5+ Years</div>
+        <div class="cred-lbl">Marketing Experience</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-ico"><i class="fas fa-layer-group"></i></div>
+      <div>
+        <div class="cred-val">B2B + B2C</div>
+        <div class="cred-lbl">Dual Market Expertise</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-ico"><i class="fas fa-compass"></i></div>
+      <div>
+        <div class="cred-val">360&#176; Marketing</div>
+        <div class="cred-lbl">Full-Funnel Coverage</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-ico"><i class="fas fa-bolt"></i></div>
+      <div>
+        <div class="cred-val">Strategy + Execution</div>
+        <div class="cred-lbl">End-to-End Delivery</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-hdr">
+      <div>
+        <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">What I Do</span></div>
+        <h2 class="sec-title fi d1">Five Ways I<br><em>Drive Growth.</em></h2>
+      </div>
+      <p class="sec-sub fi d2">From strategy to execution, I build marketing initiatives that create visibility, engagement, demand, and growth &mdash; tailored to your business stage, audience, and objectives.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fi">
+        <div class="svc-num">01</div>
+        <div class="svc-ico"><i class="fas fa-chess-king"></i></div>
+        <h3 class="svc-title">Marketing Strategy &amp; Brand Positioning</h3>
+        <p class="svc-tag">Think Before You Spend</p>
+        <p class="svc-desc">Good marketing starts with a clear strategy. I develop go-to-market plans, brand positioning frameworks, and messaging architectures that align every marketing initiative with your business objectives &mdash; so every dollar spent has a direction and a purpose. Whether you are entering a new market, launching a product, or repositioning your brand, I build the strategic foundation that makes execution effective and results measurable.</p>
+        <div class="svc-pills">
+          <span class="pill">Go-to-Market Strategy</span>
+          <span class="pill">Brand Positioning</span>
+          <span class="pill">Messaging Architecture</span>
+          <span class="pill">Competitive Analysis</span>
+          <span class="pill">Audience Segmentation</span>
+        </div>
+      </div>
+      <div class="svc-card fi d1">
+        <div class="svc-num">02</div>
+        <div class="svc-ico"><i class="fas fa-bullhorn"></i></div>
+        <h3 class="svc-title">Campaign Management &amp; Demand Generation</h3>
+        <p class="svc-tag">Campaigns That Convert</p>
+        <p class="svc-desc">I plan, produce, and manage integrated marketing campaigns from concept and creative brief through to media activation, audience targeting, and performance reporting. My campaigns are built with a commercial lens &mdash; designed to generate pipeline, accelerate the buying journey, and deliver measurable outcomes. I manage campaigns across paid, owned, and earned channels with a consistent focus on ROI and business impact.</p>
+        <div class="svc-pills">
+          <span class="pill">Integrated Campaigns</span>
+          <span class="pill">Demand Generation</span>
+          <span class="pill">Lead Nurturing</span>
+          <span class="pill">ABM</span>
+          <span class="pill">Performance Reporting</span>
+        </div>
+      </div>
+      <div class="svc-card fi d2">
+        <div class="svc-num">03</div>
+        <div class="svc-ico"><i class="fas fa-laptop-code"></i></div>
+        <h3 class="svc-title">Digital Marketing &amp; Performance Optimization</h3>
+        <p class="svc-tag">Data-Driven. Always On.</p>
+        <p class="svc-desc">I manage full digital ecosystems &mdash; paid media, SEO, email marketing, social media, and content &mdash; with a performance-first mindset. Every channel is set up, tracked, and optimized toward measurable business outcomes, not just impressions or clicks. I combine analytical thinking with creative execution to build digital programs that grow with your business and continuously improve over time.</p>
+        <div class="svc-pills">
+          <span class="pill">Paid Media (Meta / Google)</span>
+          <span class="pill">SEO / SEM</span>
+          <span class="pill">Email Marketing</span>
+          <span class="pill">Social Media</span>
+          <span class="pill">Analytics &amp; Optimization</span>
+        </div>
+      </div>
+      <div class="svc-card fi d2">
+        <div class="svc-num">04</div>
+        <div class="svc-ico"><i class="fas fa-calendar-alt"></i></div>
+        <h3 class="svc-title">Events, Webinars &amp; Experiential Marketing</h3>
+        <p class="svc-tag">Experiences That Resonate</p>
+        <p class="svc-desc">I conceptualize and execute high-impact events, virtual webinars, and experiential activations that build brand authority, deepen audience relationships, and generate qualified pipeline. From end-to-end event strategy and speaker management to webinar production and post-event lead nurturing, I ensure every experience is purposeful, polished, and tied to a commercial outcome that justifies the investment.</p>
+        <div class="svc-pills">
+          <span class="pill">Event Strategy &amp; Management</span>
+          <span class="pill">Webinar Production</span>
+          <span class="pill">Experiential Activations</span>
+          <span class="pill">Speaker Programs</span>
+          <span class="pill">Post-Event Nurturing</span>
+        </div>
+      </div>
+      <div class="svc-card fi d3">
+        <div class="svc-num">05</div>
+        <div class="svc-ico"><i class="fas fa-pen-nib"></i></div>
+        <h3 class="svc-title">Content Strategy &amp; Creative Direction</h3>
+        <p class="svc-tag">Content With Commercial Intent</p>
+        <p class="svc-desc">I build content strategies and direct creative output that serves both audience needs and business goals. From thought leadership and editorial calendars to campaign assets, social content, and sales enablement materials &mdash; I ensure every piece of content has a clear role in the marketing funnel. I bridge the gap between creative and commercial, producing content that is both compelling and conversion-focused.</p>
+        <div class="svc-pills">
+          <span class="pill">Content Strategy</span>
+          <span class="pill">Thought Leadership</span>
+          <span class="pill">Creative Direction</span>
+          <span class="pill">Copywriting</span>
+          <span class="pill">Sales Enablement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SELECTED WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-hdr">
+      <div>
+        <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">Selected Work</span></div>
+        <h2 class="sec-title fi d1">Campaigns.<br><em>Experiences. Results.</em></h2>
+        <p class="sec-sub fi d2" style="max-width:440px">A selection of campaigns, digital initiatives, experiences, webinars, and content projects across industries and markets.</p>
+      </div>
+      <div class="filters fi d2">
+        <button class="fb active" data-filter="all">All</button>
+        <button class="fb" data-filter="digital">Digital</button>
+        <button class="fb" data-filter="campaigns">Campaigns</button>
+        <button class="fb" data-filter="events">Events</button>
+        <button class="fb" data-filter="webinars">Webinars</button>
+        <button class="fb" data-filter="content">Content</button>
+      </div>
+    </div>
+    <div class="work-grid" id="workGrid">
+      <div class="wcard feat fi" data-cat="digital">
+        <div class="wcard-bg wc1">
+          <div class="wshp" style="width:320px;height:320px;background:rgba(185,77,115,.18);top:-90px;right:-90px;filter:blur(60px)"></div>
+          <div class="wshp" style="width:200px;height:200px;background:rgba(101,27,56,.4);bottom:-60px;left:60px;filter:blur(40px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">Integrated Campaign &mdash; B2B Technology</div>
+          <div class="wcard-title">360&#176; Product Launch Campaign &mdash; SaaS Platform</div>
+          <div class="wcard-meta">
+            <span><strong>Industry:</strong> Technology &amp; SaaS</span>
+            <span><strong>Role:</strong> Campaign Lead &amp; Strategist</span>
+            <span><strong>Channels:</strong> Paid, Email, Social, PR, Events</span>
+            <span><strong>Outcome:</strong> 3x pipeline growth in 90 days</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+      <div class="wcard fi d1" data-cat="digital">
+        <div class="wcard-bg wc2">
+          <div class="wshp" style="width:220px;height:220px;background:rgba(154,49,88,.25);top:-50px;right:-50px;filter:blur(50px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">Digital Marketing &mdash; Financial Services</div>
+          <div class="wcard-title">Performance-Led Digital Growth Program</div>
+          <div class="wcard-meta">
+            <span><strong>Role:</strong> Digital Marketing Manager</span>
+            <span><strong>Channels:</strong> Google Ads, Meta, SEO, Email</span>
+            <span><strong>Outcome:</strong> 65% increase in qualified leads</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+      <div class="wcard fi d1" data-cat="events">
+        <div class="wcard-bg wc3">
+          <div class="wshp" style="width:200px;height:200px;background:rgba(210,122,152,.18);bottom:-50px;left:-30px;filter:blur(45px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">Events &amp; Experiences &mdash; Professional Services</div>
+          <div class="wcard-title">Regional Industry Summit &amp; Networking Event</div>
+          <div class="wcard-meta">
+            <span><strong>Role:</strong> Event Marketing Lead</span>
+            <span><strong>Scale:</strong> 500+ attendees, 12 speakers</span>
+            <span><strong>Outcome:</strong> 40+ qualified opportunities generated</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+      <div class="wcard fi d2" data-cat="webinars">
+        <div class="wcard-bg wc4">
+          <div class="wshp" style="width:240px;height:240px;background:rgba(101,27,56,.35);top:-70px;left:-60px;filter:blur(55px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">Webinar Series &mdash; B2B Technology</div>
+          <div class="wcard-title">Thought Leadership Webinar Program</div>
+          <div class="wcard-meta">
+            <span><strong>Role:</strong> Program Manager &amp; Host</span>
+            <span><strong>Scale:</strong> 8-episode series, 300+ registrants/ep</span>
+            <span><strong>Outcome:</strong> 28% attendee-to-MQL conversion rate</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+      <div class="wcard fi d2" data-cat="printables">
+        <div class="wcard-bg wc5">
+          <div class="wshp" style="width:180px;height:180px;background:rgba(185,77,115,.2);top:-35px;right:-35px;filter:blur(40px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">Content Strategy &mdash; Consumer &amp; Lifestyle</div>
+          <div class="wcard-title">Brand Editorial &amp; Content Program</div>
+          <div class="wcard-meta">
+            <span><strong>Role:</strong> Content Strategist &amp; Creative Director</span>
+            <span><strong>Output:</strong> 120+ assets, 6-month editorial calendar</span>
+            <span><strong>Outcome:</strong> 4x organic engagement growth</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+      <div class="wcard fi d3" data-cat="printables">
+        <div class="wcard-bg wc6">
+          <div class="wshp" style="width:240px;height:240px;background:rgba(125,33,69,.4);bottom:-70px;right:-70px;filter:blur(50px)"></div>
+        </div>
+        <div class="wcard-ov"></div>
+        <div class="wcard-cnt">
+          <div class="wcard-cat">B2C Campaign &mdash; Retail &amp; E-Commerce</div>
+          <div class="wcard-title">Consumer Acquisition &amp; Retention Campaign</div>
+          <div class="wcard-meta">
+            <span><strong>Role:</strong> Campaign Manager</span>
+            <span><strong>Channels:</strong> Social, Influencer, Email, In-Store</span>
+            <span><strong>Outcome:</strong> 42% uplift in repeat purchase rate</span>
+          </div>
+        </div>
+        <div class="wcard-arr"><i class="fas fa-arrow-up-right-from-square"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="proc-hdr">
+      <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">My Process</span></div>
+      <h2 class="sec-title fi d1">From Objective<br><em>to Outcome.</em></h2>
+      <p class="sec-sub fi d2">Every engagement follows a disciplined marketing journey &mdash; from understanding your business goal to delivering optimized, measurable results. No guesswork. No wasted budget. Just structured thinking and sharp execution.</p>
+    </div>
+    <div class="proc-wrap">
+      <div class="proc-connector"></div>
+      <div class="proc-steps">
+        <div class="pstep fi">
+          <div class="pstep-n">01</div>
+          <div class="pstep-t">Objective</div>
+          <div class="pstep-d">Understand business goals, KPIs &amp; commercial context</div>
+        </div>
+        <div class="pstep fi d1">
+          <div class="pstep-n">02</div>
+          <div class="pstep-t">Strategy</div>
+          <div class="pstep-d">Define approach, channels, audiences &amp; budget allocation</div>
+        </div>
+        <div class="pstep fi d1">
+          <div class="pstep-n">03</div>
+          <div class="pstep-t">Positioning</div>
+          <div class="pstep-d">Craft messaging, value proposition &amp; brand narrative</div>
+        </div>
+        <div class="pstep fi d2">
+          <div class="pstep-n">04</div>
+          <div class="pstep-t">Campaign</div>
+          <div class="pstep-d">Build campaign architecture, creative brief &amp; assets</div>
+        </div>
+        <div class="pstep fi d2">
+          <div class="pstep-n">05</div>
+          <div class="pstep-t">Activation</div>
+          <div class="pstep-d">Launch across channels with precision timing &amp; targeting</div>
+        </div>
+        <div class="pstep fi d3">
+          <div class="pstep-n">06</div>
+          <div class="pstep-t">Performance</div>
+          <div class="pstep-d">Track, measure &amp; report against defined KPIs</div>
+        </div>
+        <div class="pstep fi d3">
+          <div class="pstep-n">07</div>
+          <div class="pstep-t">Optimization</div>
+          <div class="pstep-d">Iterate, improve &amp; scale what delivers results</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="wrap">
+    <div class="tools-hdr">
+      <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">Tools &amp; Platforms</span></div>
+      <h2 class="sec-title fi d1">The Stack I<br><em>Work With.</em></h2>
+      <p class="sec-sub fi d2">A curated set of platforms and tools I use to plan, execute, measure, and optimize marketing across every channel and every stage of the funnel.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tcat fi">
+        <div class="tcat-ico"><i class="fas fa-chart-bar"></i></div>
+        <div class="tcat-title">Analytics &amp; Reporting</div>
+        <div class="tlist">
+          <div class="titem"><span class="tdot"></span>Google Analytics 4</div>
+          <div class="titem"><span class="tdot"></span>Google Search Console</div>
+          <div class="titem"><span class="tdot"></span>Looker Studio (Data Studio)</div>
+          <div class="titem"><span class="tdot"></span>Meta Ads Manager</div>
+          <div class="titem"><span class="tdot"></span>LinkedIn Campaign Manager</div>
+          <div class="titem"><span class="tdot"></span>Google Tag Manager</div>
+        </div>
+      </div>
+      <div class="tcat fi d1">
+        <div class="tcat-ico"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="tcat-title">CRM &amp; Marketing Automation</div>
+        <div class="tlist">
+          <div class="titem"><span class="tdot"></span>HubSpot</div>
+          <div class="titem"><span class="tdot"></span>Salesforce</div>
+          <div class="titem"><span class="tdot"></span>Mailchimp</div>
+          <div class="titem"><span class="tdot"></span>ActiveCampaign</div>
+          <div class="titem"><span class="tdot"></span>Marketo</div>
+          <div class="titem"><span class="tdot"></span>Klaviyo</div>
+        </div>
+      </div>
+      <div class="tcat fi d2">
+        <div class="tcat-ico"><i class="fas fa-palette"></i></div>
+        <div class="tcat-title">Creative &amp; Content</div>
+        <div class="tlist">
+          <div class="titem"><span class="tdot"></span>Canva Pro</div>
+          <div class="titem"><span class="tdot"></span>Adobe Creative Suite</div>
+          <div class="titem"><span class="tdot"></span>Figma</div>
+          <div class="titem"><span class="tdot"></span>Notion</div>
+          <div class="titem"><span class="tdot"></span>ChatGPT / AI Copywriting</div>
+          <div class="titem"><span class="tdot"></span>WordPress / Webflow</div>
+        </div>
+      </div>
+      <div class="tcat fi d3">
+        <div class="tcat-ico"><i class="fas fa-video"></i></div>
+        <div class="tcat-title">Events &amp; Webinars</div>
+        <div class="tlist">
+          <div class="titem"><span class="tdot"></span>Zoom Webinars</div>
+          <div class="titem"><span class="tdot"></span>ON24</div>
+          <div class="titem"><span class="tdot"></span>Hopin / RingCentral Events</div>
+          <div class="titem"><span class="tdot"></span>Eventbrite</div>
+          <div class="titem"><span class="tdot"></span>Microsoft Teams Live</div>
+          <div class="titem"><span class="tdot"></span>Slido / Mentimeter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="test-hdr">
+      <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">Testimonials</span></div>
+      <h2 class="sec-title fi d1">What People<br><em>Say.</em></h2>
+      <p class="sec-sub fi d2">Perspectives from collaborators, senior stakeholders, and partners who have worked alongside me across campaigns, events, and strategic initiatives.</p>
+    </div>
+    <div class="test-grid">
+      <div class="tcard feat fi">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">Verena is one of the most commercially-minded marketers I have worked with. She does not just execute &mdash; she thinks strategically about every initiative and connects it back to business outcomes. The integrated campaign she led was one of our most successful quarters. She managed the full funnel from awareness to pipeline with exceptional clarity and discipline. A rare combination of strategic thinking and hands-on execution.</p>
+        <div class="tauthor">
+          <div class="tavatar">MR</div>
+          <div>
+            <div class="tname">M. Rashid</div>
+            <div class="trole">VP of Marketing &mdash; B2B Technology Sector</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fi d1">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">Working with Verena on our regional event was a seamless experience. She handled everything from strategy and speaker coordination to on-the-day execution and post-event follow-up. The quality of the experience she delivered exceeded our expectations, and the pipeline results spoke for themselves.</p>
+        <div class="tauthor">
+          <div class="tavatar">SH</div>
+          <div>
+            <div class="tname">S. Hassan</div>
+            <div class="trole">Head of Partnerships &mdash; Professional Services</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fi d1">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">Verena brought structure and commercial focus to our content program. She built an editorial strategy that was not just creative &mdash; it was tied directly to our demand generation goals. Our organic engagement grew significantly and the content she directed became a genuine asset for the sales team.</p>
+        <div class="tauthor">
+          <div class="tavatar">LK</div>
+          <div>
+            <div class="tname">L. Karim</div>
+            <div class="trole">Brand Director &mdash; Consumer &amp; Lifestyle</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fi d2">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">The webinar program Verena built for us was a game changer. She managed everything &mdash; the topic strategy, speaker sourcing, production, promotion, and post-event nurturing. The conversion rates from attendee to MQL were the highest we had seen. She understands how to make virtual experiences commercially effective.</p>
+        <div class="tauthor">
+          <div class="tavatar">AT</div>
+          <div>
+            <div class="tname">A. Taha</div>
+            <div class="trole">Marketing Director &mdash; SaaS &amp; Technology</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fi d2">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">Verena has a rare ability to move between big-picture strategy and granular execution without losing sight of either. She is proactive, data-literate, and genuinely invested in results. Our digital performance improved significantly under her management, and she built a sustainable foundation for ongoing growth.</p>
+        <div class="tauthor">
+          <div class="tavatar">NF</div>
+          <div>
+            <div class="tname">N. Fouad</div>
+            <div class="trole">Chief Marketing Officer &mdash; Financial Services</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fi d3">
+        <div class="tq">&ldquo;</div>
+        <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="ttext">Verena is the kind of marketer every growth-stage business needs. She asks the right questions, challenges assumptions, and builds campaigns that actually move the needle. Her understanding of both B2B and B2C dynamics is genuinely impressive and she brings that dual perspective to every brief she works on.</p>
+        <div class="tauthor">
+          <div class="tavatar">OM</div>
+          <div>
+            <div class="tname">O. Mansour</div>
+            <div class="trole">Founder &amp; CEO &mdash; Growth-Stage Startup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-ey">
+      <div class="cta-ey-line"></div>
+      <span class="cta-ey-txt">Let's Build Something</span>
+      <div class="cta-ey-line" style="background:linear-gradient(to left,var(--pink),transparent)"></div>
+    </div>
+    <h2 class="cta-h fi">Have a Marketing<br><em>Challenge?</em></h2>
+    <p class="cta-sub fi d1">Whether you need a full marketing strategy, a campaign built from scratch, a digital program that performs, or an event that generates real pipeline &mdash; I would love to hear about your challenge and explore how we can work together.</p>
+    <div class="cta-btns fi d2">
+      <a href="#contact" class="btn-p"><span>Request a Consultation</span><i class="fas fa-arrow-right"></i></a>
+      <a href="#contact" class="btn-o"><i class="fas fa-handshake"></i><span>Let's Work Together</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-ey fi"><div class="sec-ey-line"></div><span class="sec-ey-txt">Contact</span></div>
+    <div class="contact-grid">
+      <div class="fi d1">
+        <h2 class="ci-title">Let's<br><em>Talk.</em></h2>
+        <p class="ci-desc">I work with businesses, founders, and marketing teams who need a strategic and hands-on marketing partner. If you have a brief, a challenge, or simply want to explore what is possible &mdash; reach out and let's start the conversation.</p>
+        <div class="ci-avail">
+          <div class="ci-avail-dot"></div>
+          <span class="ci-avail-txt">Available for New Projects &amp; Consultations</span>
+        </div>
+        <div class="clinks">
+          <a href="mailto:verena.mallak@gmail.com" class="clink">
+            <div class="clink-ico"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="clink-label">Email</div>
+              <div class="clink-val">verena.mallak@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/verenamallak" target="_blank" class="clink">
+            <div class="clink-ico"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <div class="clink-label">LinkedIn</div>
+              <div class="clink-val">linkedin.com/in/verenamallak</div>
+            </div>
+          </a>
+          <a href="https://wa.me/201554656293" target="_blank" class="clink">
+            <div class="clink-ico"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="clink-label">WhatsApp</div>
+              <div class="clink-val">+20 155 465 6293</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="fi d2">
+        <div class="cform">
+          <div class="form-title">Send a Message</div>
+          <div class="form-sub">Tell me about your project or challenge and I will get back to you within 24 hours.</div>
+          <form onsubmit="handleForm(event)">
+            <div class="frow">
+              <div class="fg">
+                <label class="flbl">Full Name</label>
+                <input class="finp" type="text" placeholder="Your full name" required/>
+              </div>
+              <div class="fg">
+                <label class="flbl">Email Address</label>
+                <input class="finp" type="email" placeholder="your@email.com" required/>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="fg">
+                <label class="flbl">Company / Organisation</label>
+                <input class="finp" type="text" placeholder="Your company name"/>
+              </div>
+              <div class="fg">
+                <label class="flbl">I Need Help With</label>
+                <select class="fsel">
+                  <option value="" disabled selected>Select a service</option>
+                  <option>Marketing Strategy &amp; Brand Positioning</option>
+                  <option>Campaign Management &amp; Demand Generation</option>
+                  <option>Digital Marketing &amp; Performance</option>
+                  <option>Events, Webinars &amp; Experiential</option>
+                  <option>Content Strategy &amp; Creative Direction</option>
+                  <option>General Consultation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg full">
+              <label class="flbl">Message</label>
+              <textarea class="ftxt" placeholder="Tell me about your business, your challenge, and what you are hoping to achieve..." required></textarea>
+            </div>
+            <button type="submit" class="fsub"><span>Send Message &nbsp; &#8594;</span></button>
+            <p class="form-note">I typically respond within 24 hours. All enquiries are treated with complete confidentiality.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-name">Verena Mallak Fayez</div>
+        <div class="foot-role">Marketing Manager &amp; Growth Strategist</div>
+        <p class="foot-desc">Turning business objectives into marketing that moves. Strategy, creativity, execution, and growth &mdash; delivered with precision and commercial intent.</p>
+      </div>
+      <div class="foot-nav">
+        <div class="fng">
+          <div class="fnt">Navigation</div>
+          <a href="#services" class="fnl">Services</a>
+          <a href="#work" class="fnl">Selected Work</a>
+          <a href="#process" class="fnl">My Process</a>
+          <a href="#tools" class="fnl">Tools</a>
+          <a href="#testimonials" class="fnl">Testimonials</a>
+        </div>
+        <div class="fng">
+          <div class="fnt">Services</div>
+          <a href="#services" class="fnl">Marketing Strategy</a>
+          <a href="#services" class="fnl">Campaign Management</a>
+          <a href="#services" class="fnl">Digital Marketing</a>
+          <a href="#services" class="fnl">Events &amp; Webinars</a>
+          <a href="#services" class="fnl">Content Strategy</a>
+        </div>
+        <div class="fng">
+          <div class="fnt">Connect</div>
+          <a href="mailto:verena.mallak@gmail.com" class="fnl">Email</a>
+          <a href="https://linkedin.com/in/verenamallak" target="_blank" class="fnl">LinkedIn</a>
+          <a href="#contact" class="fnl">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="foot-copy">&copy; 2026 Verena Mallak Fayez. All rights reserved.</span>
+      <span class="foot-slogan">Strategy. Creativity. Execution. Growth.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV SCROLL
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // MOBILE MENU
+  const burger = document.getElementById('burgerBtn');
+  const mobMenu = document.getElementById('mobMenu');
+  const mobClose = document.getElementById('mobClose');
+  burger.addEventListener('click', () => mobMenu.classList.add('open'));
+  mobClose.addEventListener('click', () => mobMenu.classList.remove('open'));
+  function closeMob() { mobMenu.classList.remove('open'); }
+
+  // SCROLL ANIMATIONS
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+
+  // WORK FILTERS
+  const filterBtns = document.querySelectorAll('.fb');
+  const workCards = document.querySelectorAll('#workGrid .wcard');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      workCards.forEach(card => {
+        const cat = card.dataset.cat;
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // FORM SUBMIT
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.fsub');
+    btn.innerHTML = '<span>Message Sent! I will be in touch soon.</span>';
+    btn.style.background = 'linear-gradient(135deg,#2d6a4f,#1b4332)';
+    setTimeout(() => {
+      btn.innerHTML = '<span>Send Message &nbsp; &#8594;</span>';
+      btn.style.background = '';
+      e.target.reset();
+    }, 4000);
+  }
+</script>
+</body>
+</html>
